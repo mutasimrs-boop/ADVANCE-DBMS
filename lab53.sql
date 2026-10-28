@@ -1,0 +1,13 @@
+CREATE OR REPLACE TRIGGER emp_insert
+AFTER INSERT ON EMP
+FOR EACH ROW
+BEGIN
+    INSERT INTO NEWEMP
+    VALUES (
+        :NEW.EMPNO,
+        :NEW.ENAME,
+        :NEW.DEPT,
+        :NEW.SALARY
+    );
+END;
+/

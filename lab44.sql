@@ -1,0 +1,10 @@
+CREATE OR REPLACE FUNCTION find_square
+(
+    n IN NUMBER
+)
+RETURN NUMBER
+IS
+BEGIN
+    RETURN n * n;
+END;
+/

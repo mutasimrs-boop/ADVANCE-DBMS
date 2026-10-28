@@ -1,21 +1,19 @@
---program calculate simple interest using pl/sql
+--program of simple interest
+set serveroutput on
+declare
+p number:='&p';
+r number:='&r';
+t number:='&t';
+si number;
+begin
+si:=(p*r*t)/100;
+dbms_output.put_line('principal =' ||p);
+dbms_output.put_line('rate =' ||r);
+dbms_output.put_line('time =' ||t);
+dbms_output.put_line('simple interest =' ||si);
 
-SET SERVEROUTPUT ON;
-
-DECLARE
-	principal number:=10000;
-	rate      number:=8;
-	years	  number:=3;
-	interest  number;
-
-BEGIN
-	interest:=(principal*rate*years)/100;
-	dbms_output.put_line('principal amount:'||principal);
-	dbms_output.put_line('rate of interest:'||rate||'%');
-	dbms_output.put_line('time(years):'||years);
-	dbms_output.put_line('simple interest:'||interest);
-
-END;
+end;
 /
-	
-	
+ 
+ 
+ 

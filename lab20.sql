@@ -1,0 +1,18 @@
+SET SERVEROUTPUT ON;
+
+DECLARE
+    V_DEPTNO NUMBER := &DEPTNO;
+BEGIN
+
+    UPDATE EMPL
+    SET BASICSAL = BASICSAL + 1000
+    WHERE DEPTNO = V_DEPTNO;
+
+    DBMS_OUTPUT.PUT_LINE(
+        SQL%ROWCOUNT || ' record(s) updated.'
+    );
+
+    COMMIT;
+
+END;
+/

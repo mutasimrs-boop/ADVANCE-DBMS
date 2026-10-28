@@ -1,0 +1,13 @@
+CREATE OR REPLACE TRIGGER emp_delete
+AFTER DELETE ON EMP
+FOR EACH ROW
+BEGIN
+    INSERT INTO NEWEMP
+    VALUES (
+        :OLD.EMPNO,
+        :OLD.ENAME,
+        :OLD.DEPT,
+        :OLD.SALARY
+    );
+END;
+/
